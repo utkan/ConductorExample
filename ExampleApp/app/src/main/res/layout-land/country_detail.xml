@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Note: For a quick demo, nested layouts with weights are used. However this is
+     very expensive in terms of performance and need to be done more properly in production apps
+     (e.g., create a custom view instead of using predefined layouts to avoid multiple
+     measure/layout passes) -->
+
+<net.huannguyen.conductorexample.countrydetail.CountryDetailView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/flag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            tools:src="@android:color/white"
+            android:layout_marginTop="24dp"
+            tools:ignore="ContentDescription"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/favourite_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_favorite"
+            android:scaleType="center"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/fab_margin_right"
+            android:layout_marginRight="@dimen/fab_margin_right"
+            android:layout_marginBottom="@dimen/fab_margin_vertical"
+            app:fabSize="normal"/>
+    </FrameLayout>
+
+    <TableLayout
+        android:id="@+id/detail_group"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:background="?android:attr/colorBackground">
+
+        <TableRow android:padding="12dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/capital"
+                style="@style/CountryDataLabel"/>
+
+            <TextView
+                android:id="@+id/capital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CountryDataValue"/>
+        </TableRow>
+
+        <TableRow android:padding="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/population"
+                style="@style/CountryDataLabel"/>
+
+            <TextView
+                android:id="@+id/population"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CountryDataValue"/>
+        </TableRow>
+
+        <TableRow android:padding="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/language"
+                style="@style/CountryDataLabel"/>
+
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CountryDataValue"/>
+        </TableRow>
+
+        <TableRow android:padding="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/currency"
+                style="@style/CountryDataLabel"/>
+
+            <TextView
+                android:id="@+id/currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CountryDataValue"/>
+        </TableRow>
+
+        <TableRow android:padding="12dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timezone"
+                style="@style/CountryDataLabel"/>
+
+            <TextView
+                android:id="@+id/timezone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CountryDataValue"/>
+        </TableRow>
+    </TableLayout>
+</net.huannguyen.conductorexample.countrydetail.CountryDetailView>
